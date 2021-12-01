@@ -13,3 +13,5 @@ print(f"Курс биткоина к американскому доллару: 
 rates = ExchangeRates(str(datetime.now().date()))
 usd_course = rates["USD"].value
 print(f"Курс американского доллара к рублю: {usd_course}")
+
+print(f"Курс биткоина к рублю: {btc_course * float(usd_course)}")
