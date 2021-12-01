@@ -1,0 +1,14 @@
+name: Publish
+
+on: push
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: sergeysova/docker-publish-action@master
+        with:
+          image: dmitryzag/btc-to-rub-converter
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
