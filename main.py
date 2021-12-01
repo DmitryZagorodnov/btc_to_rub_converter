@@ -17,4 +17,4 @@ print(f"Курс американского доллара к рублю: {usd_c
 print(f"Курс биткоина к рублю: {btc_course * float(usd_course)}")
 
 num = input("Введите количество биткоинов: ")
-print(f"{btc_course * float(num)} руб.")
+print(f"{btc_course * float(usd_course) * float(num)} руб.")
