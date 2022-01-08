@@ -24,3 +24,5 @@ class TestConverter(unittest.TestCase):
     def test_rbl_value(self):
         self.assertTrue(get_btc_in_roubles() > 0)
 
+if __name__ == "__main__":
+    unittest.main()
