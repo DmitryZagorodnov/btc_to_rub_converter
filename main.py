@@ -15,11 +15,17 @@ def get_btc_course():
 def get_usd_course():
     rates = ExchangeRates(str(datetime.now().date()))
     usd_course = rates["USD"].value
-    return usd_course
+    return float(usd_course)
+
+
+def get_btc_in_roubles():
+    btc = get_btc_course()
+    usd = get_usd_course()
+    return btc * float(usd)
 
 
 def calculate(x):
-    return get_btc_course() * float(get_usd_course()) * float(x)
+    return get_btc_course() * get_usd_course() * x
 
 
 def main():
@@ -27,7 +33,7 @@ def main():
     usd_course = get_usd_course()
     print(f"Курс биткоина к американскому доллару: {btc_course}")
     print(f"Курс американского доллара к рублю: {usd_course}")
-    print(f"Курс биткоина к рублю: {btc_course * float(usd_course)}")
+    print(f"Курс биткоина к рублю: {get_btc_in_roubles()}")
 
 
 if __name__ == "__main__":
